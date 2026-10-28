@@ -1,0 +1,70 @@
+{
+  "style": "for-the-badge",
+  "status": {
+    "license": {
+      "url": "https://img.shields.io/github/license/{{OWNER}}/{{REPO}}?style=for-the-badge",
+      "link": "https://github.com/{{OWNER}}/{{REPO}}/blob/{{DEFAULT_BRANCH}}/{{LICENSE_FILE}}"
+    },
+    "version": {
+      "url": "https://img.shields.io/github/v/release/{{OWNER}}/{{REPO}}?style=for-the-badge",
+      "link": "https://github.com/{{OWNER}}/{{REPO}}/releases",
+      "notes": "Requires a published GitHub release, not just a manifest version."
+    },
+    "build": {
+      "url": "https://img.shields.io/github/actions/workflow/status/{{OWNER}}/{{REPO}}/{{WORKFLOW_FILE}}?style=for-the-badge",
+      "link": "https://github.com/{{OWNER}}/{{REPO}}/actions/workflows/{{WORKFLOW_FILE}}",
+      "notes": "WORKFLOW_FILE is the actual filename under .github/workflows/, including its extension."
+    },
+    "stars": {
+      "url": "https://img.shields.io/github/stars/{{OWNER}}/{{REPO}}?style=for-the-badge",
+      "link": "https://github.com/{{OWNER}}/{{REPO}}/stargazers"
+    }
+  },
+  "social": {
+    "youtube": {
+      "url": "https://img.shields.io/youtube/channel/subscribers/{{YOUTUBE_CHANNEL_ID}}?style=for-the-badge&logo=youtube&label=YouTube",
+      "link": "https://www.youtube.com/channel/{{YOUTUBE_CHANNEL_ID}}",
+      "notes": "Requires a verified channel ID, not a video ID or @handle."
+    },
+    "discord": {
+      "url": "https://img.shields.io/discord/{{DISCORD_SERVER_ID}}?style=for-the-badge&logo=discord&label=Discord",
+      "link": "{{DISCORD_INVITE_URL}}",
+      "notes": "Requires the server ID and an enabled server widget for member counts; use the actual invite URL."
+    },
+    "twitter": {
+      "url": "https://img.shields.io/badge/Twitter-{{TWITTER_HANDLE}}-1DA1F2?style=for-the-badge&logo=x&logoColor=white",
+      "link": "https://x.com/{{TWITTER_HANDLE}}"
+    },
+    "linkedin": {
+      "url": "https://img.shields.io/badge/LinkedIn-{{LINKEDIN_NAME}}-0A66C2?style=for-the-badge",
+      "link": "{{LINKEDIN_URL}}",
+      "notes": "Use the verified personal or company profile URL. This badge is text-only."
+    },
+    "bluesky": {
+      "url": "https://img.shields.io/badge/Bluesky-{{BLUESKY_HANDLE}}-0085FF?style=for-the-badge&logo=bluesky&logoColor=white",
+      "link": "https://bsky.app/profile/{{BLUESKY_HANDLE}}"
+    },
+    "twitch": {
+      "url": "https://img.shields.io/badge/Twitch-{{TWITCH_HANDLE}}-9146FF?style=for-the-badge&logo=twitch&logoColor=white",
+      "link": "https://twitch.tv/{{TWITCH_HANDLE}}"
+    }
+  },
+  "extras": {
+    "npm_downloads": {
+      "url": "https://img.shields.io/npm/dm/{{PACKAGE_NAME}}?style=for-the-badge",
+      "link": "https://www.npmjs.com/package/{{PACKAGE_NAME}}",
+      "notes": "Include only for an existing, verified npm package."
+    },
+    "pypi_downloads": {
+      "url": "https://img.shields.io/pypi/dm/{{PACKAGE_NAME}}?style=for-the-badge",
+      "link": "https://pypi.org/project/{{PACKAGE_NAME}}",
+      "notes": "Include only for an existing, verified PyPI package."
+    }
+  },
+  "usage": {
+    "selection": "Include only badges supported by verified project data. Three to five status badges is the sweet spot when supported; group social badges separately.",
+    "placeholders": "Replace all {{PLACEHOLDER}} markers with verified values and URL-encode each substituted URL component. For complete URL placeholders, preserve the verified URL instead of encoding the whole URL.",
+    "static_text": "For static badge text, double literal hyphens and underscores before URL encoding; do not apply this escaping to destination URLs.",
+    "rendering": "Render each entry as [![Label](url)](link). Omit badges with unresolved required values. Only YouTube and Discord social badges here display live counts."
+  }
+}

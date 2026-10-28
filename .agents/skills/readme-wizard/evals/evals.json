@@ -1,0 +1,66 @@
+{
+  "skill": "readme-wizard",
+  "evals": [
+    {
+      "id": "straightforward-request",
+      "prompt": "Improve the README for this project",
+      "expected_output": "An improved README.md based on actual project files, with a clear introduction, actionable Quick Start, and relevant navigation and project metadata.",
+      "assertions": [
+        "Has a centered hero with the actual project name and a concise tagline.",
+        "Has a What is this? section explaining the project purpose and audience in two or three concrete sentences.",
+        "Has a Quick Start with prerequisites and real setup and run commands matching project files; documentation-only projects give a first reading or exercise step instead of invented commands.",
+        "When a project tree is useful, it reflects the actual filesystem, lists directories before files, alphabetizes each group, adds trailing slashes to directories, and excludes hidden and generated content.",
+        "When documentation exists, includes a documentation table linking to real resources.",
+        "When a contribution process exists, describes it accurately; includes contrib.rocks contributor avatars and a Star History footer when a GitHub repository is known.",
+        "Includes only supported status badges, all using style=for-the-badge, and includes Connect only when verified social links exist.",
+        "Omits sections without useful supporting content and leaves no unresolved template placeholders or filler TODO notes."
+      ]
+    },
+    {
+      "id": "casual-request",
+      "prompt": "My repo needs a better README, can you make it look professional?",
+      "expected_output": "A professional README that preserves useful existing information, explains the project clearly, and helps a newcomer take the first step without inventing metadata.",
+      "assertions": [
+        "Recognizes the request as a README improvement task and produces an updated README rather than only offering suggestions.",
+        "Has a centered project name and short tagline, followed by a specific explanation of what the project does.",
+        "Gives a concrete first-use example or reading step derived from the project, with required configuration explained when applicable.",
+        "Uses concise, direct language appropriate to the project audience and avoids unsupported marketing claims.",
+        "Organizes applicable content in the order hero, introduction, Quick Start, project structure, documentation, contributing, Connect, license, and Star History footer.",
+        "Preserves useful existing setup and usage information and links to real documentation instead of inventing pages.",
+        "Uses consistent style=for-the-badge badges only for verified licenses, releases, workflows, repositories, packages, or social accounts.",
+        "Does not require a license badge, release badge, CI badge, social section, or GitHub widgets when the required project information is absent.",
+        "Contains no unresolved placeholders, empty headings, or fabricated contribution policies."
+      ]
+    },
+    {
+      "id": "minimal-project",
+      "prompt": "Generate a README for this project. It's just a small script, nothing fancy.",
+      "expected_output": "A short README proportional to the small script, focused on its purpose, requirements, invocation, and observable result, without unnecessary sections.",
+      "assertions": [
+        "Has the actual script or project title and a brief description of its purpose.",
+        "Has a Quick Start or Usage section with the real invocation and any required runtime or dependencies.",
+        "Shows a concrete input and expected output or side effect supported by the script.",
+        "Keeps the length proportional to the project rather than producing a large boilerplate document.",
+        "Omits architecture diagrams, large directory trees, documentation tables, and contribution boilerplate when they add no useful information.",
+        "Does not invent package managers, install commands, licenses, CI workflows, releases, social accounts, or repository identifiers.",
+        "Has no empty sections, filler prose, or unresolved template placeholders."
+      ]
+    },
+    {
+      "id": "badge-focus",
+      "prompt": "I want to add some nice badges to my README, the shields.io kind. Can you help?",
+      "expected_output": "A focused README update adding correctly formatted shields.io badges supported by actual project metadata while preserving useful existing content.",
+      "assertions": [
+        "Every added badge image uses an HTTPS img.shields.io URL with style=for-the-badge.",
+        "Groups status badges near the top and puts verified social badges in Connect when applicable.",
+        "Uses the real owner and repository, actual workflow filename, and verified release or package identifiers rather than guessed values.",
+        "Adds license, release, CI, and package badges only when the corresponding license, published release, configured workflow, or published package is established.",
+        "Links each badge to its corresponding real project page or verified account rather than to the badge image itself.",
+        "YouTube subscriber badges use a verified channel ID, and Discord member badges use a verified server ID with the required widget enabled; neither is guessed from a video or invite code.",
+        "Replaces all dynamic placeholders and correctly escapes and URL-encodes substituted static badge text.",
+        "Prefers three to five status badges when supported, but uses fewer or none rather than inventing targets.",
+        "Preserves unrelated README content and does not add social accounts that are absent from the project."
+      ]
+    }
+  ]
+}
